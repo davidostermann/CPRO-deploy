@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "nodemon",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "postinstall": "cd front && npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node"
