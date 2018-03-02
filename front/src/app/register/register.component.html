@@ -1,0 +1,27 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center">
+  <form [formGroup]="user"
+    (ngSubmit)="createUser()"
+    fxLayout="column"
+    fxLayoutAlign="center"
+    fxFlex.gt-xs="1 1 480px"
+    fxFlex.xs="1 1 80%"
+    fxLayoutGap="2em">
+    <mat-form-field>
+      <input matInput placeholder="First name" name="firstName" formControlName="firstName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Last name" name="lastName" formControlName="lastName">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Email" name="email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Password" type="password" name="password" formControlName="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Confirm password" type="password" name="confirmPassword" formControlName="confirmPassword">
+      <mat-error *ngIf="user.get('confirmPassword').errors?.matchPassword">Password not match</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary">Envoyer</button>
+  </form>
+</div>

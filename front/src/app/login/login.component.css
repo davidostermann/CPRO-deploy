@@ -1,0 +1,10 @@
+.container {
+  min-height: calc(100% - 64px);
+}
+
+button {
+  margin-top: 2em;
+  text-transform: uppercase;
+}
+
+
