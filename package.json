@@ -8,7 +8,7 @@
     "dev": "nodemon",
     "test": "jest --watchAll",
     "seeddb": "node setupdb",
-    "postinstall": "npm seeddb && cd front && npm install && npm run build"
+    "postinstall": "npm run seeddb && cd front && npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node"
