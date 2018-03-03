@@ -20,7 +20,9 @@
     3. Récupérer le nom de la nouvelle variable d’environnement pour l’url de la DB et l’ajouter au fichier .env
     4. Ajouter un script postintall dans le package.json à la racine pour installer les dépendances du front et builder le front
     5. Ajouter une env NPM_CONFIG_PRODUCTION = false afin que HEROKU install les dev-dependencies pcq nous en avons besoin pour build le front (vue-cli, angular-cli ou create-react-app ou webpack)
-    6. Insérer des données dans la base heroku avec la command : node setupdb (a ajouter au postinstall)
+    6. Insérer des données dans la base heroku avec psql : `heroku pg:psql --app trellolo`
+
+
 
 ### Plus d’info
 
@@ -40,6 +42,12 @@ https://devcenter.heroku.com/articles/heroku-postgresql#using-the-cli
 
 ## J'ai fait un script node à executer sur le server
 
-setupdb.js
+`setupdb.js`
 
-## et je l'ai ajouter au script postinstall
+et je l'ai ajouter au script postinstall...
+
+...Mais ça ne marche pas avec heroku postgres : probleme d'authent.
+
+## Du coup, la seul solution generalisable est d'utiliser psql 
+
+Pour ce faire, il faut supprimer les line break de votre fichier setup.sql à l'aide du raccourci (ctrl+j) de VSCode (cmd+j pour mac)
