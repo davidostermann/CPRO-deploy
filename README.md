@@ -50,4 +50,10 @@ et je l'ai ajouter au script postinstall...
 
 ## Du coup, la seul solution generalisable est d'utiliser psql 
 
-Pour ce faire, il faut supprimer les line break de votre fichier setup.sql à l'aide du raccourci (ctrl+j) de VSCode (cmd+j pour mac)
+Pour ce faire, il faut supprimer les line break de votre fichier setup.sql à l'aide du raccourci (ctrl+j) de VSCode (cmd+j pour mac).
+
+Ensuite il suffit de copier le contenu du fichier et l'executer en tant que commande sql dans le psql.
+
+`heroku pg:psql --app trellolo`
+
++ copier / coller le contenu de setup.sql (sans les line breaks)
