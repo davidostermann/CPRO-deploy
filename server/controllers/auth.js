@@ -5,18 +5,18 @@ const { generateToken } = require('../auth/token')
 const ctrl = {}
 
 ctrl.register = (req, res) => {
-  const { lastname, firstname, email, pwd } = req.body
+  const { lastname, firstname, email, password } = req.body
   if (!email) {
     return res.status(422).send({ error: 'You must enter an email address' })
   }
 
-  if (!pwd) {
+  if (!password) {
     return res.status(422).send({ error: 'You must enter a password' })
   }
 
   return user
     .notExists(email)
-    .then(exist => user.createUser({ lastname, firstname, email, pwd }))
+    .then(exist => user.createUser({ lastname, firstname, email, password }))
     .then(result => user.getByEmail(email))
     .then(result => res.send(result))
     .catch(error => res.status(422).send({ error }))

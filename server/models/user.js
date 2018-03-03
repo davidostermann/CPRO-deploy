@@ -5,8 +5,8 @@ module.exports = {
   getUsers() {
     return db.unwrapQuery('SELECT * FROM users ORDER BY id')
   },
-  createUser({ lastname, firstname, email, pwd }) {
-    return encode(pwd).then(hash => db.query(`
+  createUser({ lastname, firstname, email, password }) {
+    return encode(password).then(hash => db.query(`
         INSERT INTO users(firstname, lastname, email, password, role)
         VALUES ('${firstname}', '${lastname}', 
         '${email}', '${hash}', 'user')`))
